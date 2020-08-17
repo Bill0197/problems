@@ -15,3 +15,16 @@
 //         return new Date(date2 - date1).getDate() - 1;
 //     }
 // };
+//////////////////////
+
+var convert = (degree) => {
+    if (degree.includes("f")) {
+        var newData = degree.substr(0, degree.indexOf("f"));
+        return Math.round((parseFloat(newData - 32) * 5) / 9);
+    } else if (degree.includes("c")) {
+        var newData = degree.substr(0, degree.indexOf("c"));
+        return Math.round(parseFloat((newData * 9) / 5) + 32);
+    } else {
+        return "Wrong!";
+    }
+};
